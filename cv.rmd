@@ -1,6 +1,6 @@
 ---
-title: "Stefan Laser's CV"
-author: Stefan Laser
+title: "Grant Neilson's CV"
+author: Grant Neilson
 date: "`r Sys.Date()`"
 params:
   pdf_mode:
@@ -11,32 +11,22 @@ output:
     self_contained: true
 ---
 
-```{css, echo=FALSE}
-/* Turn-off side-bar for publications */
-.pagedjs_page:not(:nth-of-type(-n+5)) {
-  --sidebar-width: 0rem;
-  --sidebar-background-color: #ffffff;
-  --main-width: calc(var(--content-width) - var(--sidebar-width));
-  --decorator-horizontal-margin: 0.2in;
-}
-```
-
 ```{r, include=FALSE}
 knitr::opts_chunk$set(
   results='asis', 
   echo = FALSE
 )
 
-library(magrittr) # For the pipe
 source("cv_printing_functions.r")
-# https://docs.google.com/spreadsheets/d/1PAcxb7nRv3x4DDOFGpRXpM-gzXqtzmV2ZNOAkYB6kQY/edit?usp=sharing or data/
+
 # Read in all data and initialize a CV printer object
 CV <- create_CV_object(
-  data_location = "https://docs.google.com/spreadsheets/d/1PAcxb7nRv3x4DDOFGpRXpM-gzXqtzmV2ZNOAkYB6kQY/edit?usp=sharing",  
+  data_location = "https://docs.google.com/spreadsheets/d/1vKuhq-kI2trRA5IB-leKA_lL3kfW9MrZG1wKj4Z212I/edit?gid=0#gid=0",  
   pdf_mode = params$pdf_mode
 )
 
 ```
+
 
 ```{r}
 # When in pdf export mode the little dots are unaligned, so fix that with some conditional CSS.
@@ -50,41 +40,50 @@ if(params$pdf_mode) {
 }
 ```
 
-<!-- include a fontawesome reference -->
-<script src="https://kit.fontawesome.com/0a75c4d7c0.js" crossorigin="anonymous"></script>
 
 Aside
 ================================================================================
-#<!--
-#```{r}
+
+```{r}
 # Build interactive network of positions colored by section
 # and connected if they occurred in the same year
-# datadrivencv::build_network_logo(CV$entries_data)
-#```
-#
-#```{r}
-#if(params$pdf_mode){
-#  cat("View this CV online with links at https://hightech-am-ende.de/cv.html")
-#} else {
-#  cat("[<i class='fas fa-download'></i> Download a PDF of this CV](https://hightech-am-ende.de/cv.pdf)")
-#}
-#```
-#-->
+datadrivencv::build_network_logo(CV$entries_data)
+```
+
+
+```{r}
+if(params$pdf_mode){
+  cat("View this CV online with links at _grantneilson.me/cv/_")
+} else {
+  cat("[<i class='fas fa-download'></i> Download a PDF of this CV](https://github.com/grantneilson/cv/raw/master/grantneilson_cv.pdf)")
+}
+```
 
 Contact {#contact}
 --------------------------------------------------------------------------------
 
 ```{r}
-CV %>% print_contact_info()
+CV |> print_contact_info()
 ```
+
+
+
+Language Skills {#skills}
+--------------------------------------------------------------------------------
+
+```{r}
+CV |> print_skill_bars()
+```
+
+
 
 Disclaimer {#disclaimer}
 --------------------------------------------------------------------------------
-This resume was made with the R package [**pagedown**](https://github.com/rstudio/pagedown) and [**datadrivencv**](http://nickstrayer.me/datadrivencv/index.html).
 
-<!--
-Code available on <i class="fa fa-github"></i>  [GitHub](https://github.com/LaserStefan/cv/). 
--->
+Made with the R package [**pagedown**](https://github.com/rstudio/pagedown). 
+
+The source code is available [on github.com/nstrayer/cv](https://github.com/grantneilson/cv).
+
 Last updated on `r Sys.Date()`.
 
 
@@ -92,154 +91,113 @@ Last updated on `r Sys.Date()`.
 Main
 ================================================================================
 
-Curriculum Vitae<br>Dr Stefan Laser {#title}
+Grant Neilson {#title}
 --------------------------------------------------------------------------------
 
 ```{r}
-CV %<>% print_text_block("intro") 
+# Note the assignment back to CV. This is so the link stripping works properly in PDF mode
+CV <- print_text_block(CV, "intro") 
 ```
+
+
 
 Education {data-icon=graduation-cap data-concise=true}
 --------------------------------------------------------------------------------
-::: aside
-#### Programming and Software Skills
-I have developed expertise in digital methods. Approaches like Controversy Mapping require data analysis techniques and programming skills. My skills and interests:
-
-
-
-<i class="fa-brands fa-python fa-fw"></i> `Python: Data Science`
-
-<i class="fab fa-r-project fa-fw"></i> `R: Data Science`
-
-<i class="fa-solid fa-circle-nodes fa-fw"></i> `Gephi: Networks`
-
-<i class="fa-solid fa-highlighter fa-fw"></i> `MaxQDA: Coding`
-
-<i class="fab fa-markdown fa-fw"></i> `Markdown: Memos`
-
-
-:::
 
 ```{r}
-CV %<>% print_section("education")
+CV <- print_section(CV, 'education')
 ```
 
-Academic Work Experience {data-icon=address-card}
+
+
+Research Experience {data-icon=laptop}
 --------------------------------------------------------------------------------
-::: aside
-#### Memberships
+
 ```{r}
-CV %<>% print_text_block('membership')
+CV <- print_section(CV, 'research_positions')
+```
+
+
+
+Industry Experience {data-icon=suitcase}
+--------------------------------------------------------------------------------
+
+::: aside
+```{r}
+CV <- print_text_block(CV, 'industy_experience_aside')
 ```
 :::
 
 ```{r}
-CV %<>% print_section('research_positions')
+CV <- print_section(CV, 'industry_positions')
 ```
 
-Funding and Grants {data-icon=address-card}
---------------------------------------------------------------------------------
-::: aside
-#### Language Skills
-I have been employed in international contexts with English as the primary language.<br>
-
-```{r}
-CV %>% print_lang_bars()
-```
-::: 
-
-```{r}
-CV %<>% print_section('funding')
-```
-
-
-<!-- <div style="break-after:page"></div> {.page-break-before} -->
-
-
+<!-- These breaks just force a new page so section doesnt get cut off -->
+<br>
+<br>
+<br>
 
 Teaching Experience {data-icon=chalkboard-teacher}
 --------------------------------------------------------------------------------
 
 ::: aside
-#### On Teaching
 ```{r}
-CV %<>% print_text_block('teaching_experience_aside')
+CV <- print_text_block(CV, 'teaching_experience_aside')
 ```
 :::
 
-
 ```{r}
-CV %<>% print_section('teaching_positions')
+CV <- print_section(CV, 'teaching_positions')
 ```
 
-<!--
 
-ABSTRACTS {data-icon=NULL .no-timeline .page-break-before}
+
+Selected Data Science Writing {data-icon=chart-line}
 --------------------------------------------------------------------------------
 
-Selected publications {data-icon=book}
---------------------------------------------------------------------------------
-
-```{r}
-CV %<>% print_section("selected_publications") 
-```
--->
-
-LIST OF PUBLICATIONS {data-icon=NULL .no-timeline .page-break-before}
---------------------------------------------------------------------------------
-
-Monographs {data-icon=book} 
---------------------------------------------------------------------------------
-
-```{r}
-CV %<>% print_section('books')
-```
-
-Edited Volumes and Special Issues {data-icon=book}
---------------------------------------------------------------------------------
-<!--
 ::: aside
 ```{r}
-CV %<>% print_text_block('publication_aside')
+CV <- print_text_block(CV, 'data_science_writing_aside')
 ```
 :::
--->
+
 ```{r}
-CV %<>% print_section('editorials')
+CV <- print_section(CV, 'data_science_writings')
 ```
 
-Peer-Reviewed Articles {data-icon=file-text}
+
+
+Selected Press (About)  {data-icon=newspaper}
 --------------------------------------------------------------------------------
 
 ```{r}
-CV %<>% print_section('academic_articles')
+CV <- print_section(CV, 'about_me_press')
 ```
 
-Book Chapters {data-icon=file-text-o}
+
+<br>
+<br>
+
+
+Selected Press (By)  {data-icon=newspaper}
 --------------------------------------------------------------------------------
 
 ```{r}
-CV %<>% print_section('chapters')
+CV <- print_section(CV, 'by_me_press')
 ```
 
-Review-Articles and Other Texts {data-icon=newspaper-o}
+
+
+Selected Publications, Posters, and Talks {data-icon=book}
 --------------------------------------------------------------------------------
 
 ```{r}
-CV %<>% print_section('other_texts')
+CV <- print_section(CV, 'academic_articles')
 ```
 
 
-Selected Talks (All translated) {data-icon=microphone}
---------------------------------------------------------------------------------
 
 ```{r}
-CV %<>% print_section('academic_talks')
+print_links(CV)
 ```
-
-# <!--
-# ```{r}
-# CV %<>% print_links()
-# ```
-# -->
 
