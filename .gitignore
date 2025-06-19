@@ -3,6 +3,6 @@
 .RData
 .Ruserdata
 *.Rproj
-raw_data/*
+data/*
 .vscode/*
 docs/pdf/*

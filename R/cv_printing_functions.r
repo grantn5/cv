@@ -1,7 +1,6 @@
 # This file contains all the code needed to parse and print various sections of your CV
 # from data. Feel free to tweak it as you desire!
 
-
 #' Create a CV_Printer object.
 #'
 #' @param data_location Path of the spreadsheets holding all your data. This can be
@@ -14,16 +13,21 @@
 #' @param sheet_is_publicly_readable If you're using google sheets for data,
 #'   is the sheet publicly available? (Makes authorization easier.)
 #' @return A new `CV_Printer` object.
-create_CV_object <- function(data_location,
-                             pdf_mode = FALSE,
-                             resume_mode = FALSE,
-                             sheet_is_publicly_readable = TRUE) {
+create_CV_object <- function(
+  data_location,
+  pdf_mode = FALSE,
+  resume_mode = FALSE,
+  sheet_is_publicly_readable = TRUE
+) {
   cv <- list(
     pdf_mode = pdf_mode,
     links = c()
   )
 
-  is_google_sheets_location <- stringr::str_detect(data_location, "docs\\.google\\.com")
+  is_google_sheets_location <- stringr::str_detect(
+    data_location,
+    "docs\\.google\\.com"
+  )
 
   if (is_google_sheets_location) {
     if (sheet_is_publicly_readable) {
@@ -38,7 +42,12 @@ create_CV_object <- function(data_location,
     }
 
     read_gsheet <- function(sheet_id) {
-      googlesheets4::read_sheet(data_location, sheet = sheet_id, skip = 1, col_types = "c")
+      googlesheets4::read_sheet(
+        data_location,
+        sheet = sheet_id,
+        skip = 1,
+        col_types = "c"
+      )
     }
     cv$entries_data <- read_gsheet(sheet_id = "entries")
     cv$skills <- read_gsheet(sheet_id = "language_skills")
@@ -46,28 +55,42 @@ create_CV_object <- function(data_location,
     cv$contact_info <- read_gsheet(sheet_id = "contact_info")
   } else {
     # Want to go old-school with csvs?
-    cv$entries_data <- readr::read_csv(paste0(data_location, "entries.csv"), skip = 1)
-    cv$skills <- readr::read_csv(paste0(data_location, "language_skills.csv"), skip = 1)
-    cv$text_blocks <- readr::read_csv(paste0(data_location, "text_blocks.csv"), skip = 1)
-    cv$contact_info <- readr::read_csv(paste0(data_location, "contact_info.csv"), skip = 1)
+    cv$entries_data <- readr::read_csv(
+      paste0(data_location, "entries.csv"),
+      skip = 1
+    )
+    cv$skills <- readr::read_csv(
+      paste0(data_location, "language_skills.csv"),
+      skip = 1
+    )
+    cv$text_blocks <- readr::read_csv(
+      paste0(data_location, "text_blocks.csv"),
+      skip = 1
+    )
+    cv$contact_info <- readr::read_csv(
+      paste0(data_location, "contact_info.csv"),
+      skip = 1
+    )
   }
-
 
   extract_year <- function(dates) {
     date_year <- stringr::str_extract(dates, "(20|19)[0-9]{2}")
-    date_year[is.na(date_year)] <- lubridate::year(lubridate::ymd(Sys.Date())) + 10
+    date_year[is.na(date_year)] <- lubridate::year(lubridate::ymd(Sys.Date())) +
+      10
 
     date_year
   }
 
   parse_dates <- function(dates) {
-    date_month <- stringr::str_extract(dates, "(\\w+|\\d+)(?=(\\s|\\/|-)(20|19)[0-9]{2})")
+    date_month <- stringr::str_extract(
+      dates,
+      "(\\w+|\\d+)(?=(\\s|\\/|-)(20|19)[0-9]{2})"
+    )
     date_month[is.na(date_month)] <- "1"
 
     paste("1", date_month, extract_year(dates), sep = "-") |>
       lubridate::dmy()
   }
-
 
   cv$entries_data <- cv$entries_data |>
     dplyr::filter(
@@ -88,7 +111,11 @@ create_CV_object <- function(data_location,
         na.rm = TRUE
       ) |>
       dplyr::mutate(
-        description_bullets = ifelse(description_bullets != "", paste0("- ", description_bullets), "")
+        description_bullets = ifelse(
+          description_bullets != "",
+          paste0("- ", description_bullets),
+          ""
+        )
       )
   }
 
@@ -123,7 +150,9 @@ create_CV_object <- function(data_location,
 sanitize_links <- function(cv, text) {
   if (cv$pdf_mode) {
     link_titles <- stringr::str_extract_all(text, "(?<=\\[).+?(?=\\])")[[1]]
-    link_destinations <- stringr::str_extract_all(text, "(?<=\\().+?(?=\\))")[[1]]
+    link_destinations <- stringr::str_extract_all(text, "(?<=\\().+?(?=\\))")[[
+      1
+    ]]
 
     n_links <- length(cv$links)
     n_new_links <- length(link_titles)
@@ -169,7 +198,9 @@ print_section <- function(cv, section_id, glue_template = "default") {
   section_data <- dplyr::filter(cv$entries_data, section == section_id)
 
   if (length(section_data) == 0) {
-    stop(glue::glue("Tried to print section {section_id} with no entries. Make sure everything is spelled correctly or remove this section."))
+    stop(glue::glue(
+      "Tried to print section {section_id} with no entries. Make sure everything is spelled correctly or remove this section."
+    ))
   }
 
   # Take entire entries data frame and removes the links in descending order
@@ -188,7 +219,6 @@ print_section <- function(cv, section_id, glue_template = "default") {
 }
 
 
-
 #' @description Prints out text block identified by a given label.
 #' @param label ID of the text block to print as encoded in `label` column of `text_blocks` table.
 print_text_block <- function(cv, label) {
@@ -203,10 +233,15 @@ print_text_block <- function(cv, label) {
 }
 
 
-
 #' @description Construct a bar chart of skills
 #' @param out_of The relative maximum for skills. Used to set what a fully filled in skill bar is.
-print_skill_bars <- function(cv, out_of = 5, bar_color = "#969696", bar_background = "#d9d9d9", glue_template = "default") {
+print_skill_bars <- function(
+  cv,
+  out_of = 5,
+  bar_color = "#969696",
+  bar_background = "#d9d9d9",
+  glue_template = "default"
+) {
   if (glue_template == "default") {
     glue_template <- "
 <div
@@ -224,20 +259,34 @@ style = \"background:linear-gradient(to right,
   invisible(cv)
 }
 
+#' @description Construct a bar chart of skills
+#' @param out_of The relative maximum for skills. Used to set what a fully filled in skill bar is.
+print_skills <- function(cv, type_of_interest) {
+  cv$skills %>%
+    dplyr::filter(type == type_of_interest) %>%
+    glue::glue_data(
+      "- <i class='{icon_type} fa-{icon} skills'></i> {skill}"
+    ) %>%
+    print()
+
+  invisible(cv)
+}
 
 
 #' @description List of all links in document labeled by their superscript integer.
 print_links <- function(cv) {
   n_links <- length(cv$links)
   if (n_links > 0) {
-    cat("
+    cat(
+      "
 Links {data-icon=link}
 --------------------------------------------------------------------------------
 
 <br>
 
 
-")
+"
+    )
 
     purrr::walk2(cv$links, 1:n_links, function(link, index) {
       print(glue::glue("{index}. {link}"))
@@ -248,13 +297,13 @@ Links {data-icon=link}
 }
 
 
-
 #' @description Contact information section with icons
 print_contact_info <- function(cv) {
   glue::glue_data(
     cv$contact_info,
     "- <i class='fa fa-{icon}'></i> {contact}"
-  ) |> print()
+  ) |>
+    print()
 
   invisible(cv)
 }
