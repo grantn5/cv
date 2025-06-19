@@ -23,7 +23,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          install.packages(c("rmarkdown", "pagedown", "purrr", "dplyr", "readr", "tidyr", "lubridate", "here", "stringr"))
+          install.packages(c("rmarkdown", "pagedown", "purrr", "dplyr", "readr", "tidyr", "lubridate", "here", "stringr", "devtools"))
           devtools::install_github("nstrayer/datadrivencv")
         shell: Rscript {0}
 
