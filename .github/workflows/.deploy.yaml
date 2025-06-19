@@ -36,7 +36,11 @@ jobs:
 
       - name: Install dependencies
         run: |
-          install.packages(c("rmarkdown", "pagedown", "googlesheets4", "purrr", "dplyr", "readr", "tidyr", "lubridate", "here", "stringr"))
+          install.packages(
+            c("rmarkdown", "pagedown", "googlesheets4", "purrr", "dplyr", "readr", "tidyr", "lubridate", "here", "stringr"),
+            lib = Sys.getenv("R_LIBS_USER"),
+            repos = "https://cloud.r-project.org"
+          )
         shell: Rscript {0}
         env:
           R_LIBS_USER: ${{ runner.temp }}/Rlib
