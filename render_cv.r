@@ -30,17 +30,17 @@ pagedown::chrome_print(
 
 #---- Load libraries --------------------
 
-library(rmarkdown)
-library(here)
-library(stringr)
+# library(rmarkdown)
+# library(here)
+# library(stringr)
 
-#---- Arguments -------------------------
+# #---- Arguments -------------------------
 
-args <-
-  list(
-    input_dir = here::here("."),
-    output_dir = here::here("docs")
-  )
+# args <-
+#   list(
+#     input_dir = here::here("."),
+#     output_dir = here::here("docs")
+#   )
 
 #---- Main -----------------------------
 
