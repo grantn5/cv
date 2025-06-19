@@ -23,7 +23,7 @@ jobs:
           image: rocker/shiny:latest
           options: -v ${{ github.workspace }}:/workspace
           run: |
-            Rscript -e 'install.packages(c("googlesheets4", "lubridate", "here"), repos="https://cloud.r-project.org")'
+            Rscript -e 'install.packages(c("lubridate", "here"), repos="https://cloud.r-project.org")'
             cd /workspace
             Rscript render_cv.r
 
