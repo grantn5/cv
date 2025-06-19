@@ -25,6 +25,9 @@ CV <- create_CV_object(
   pdf_mode = params$pdf_mode
 )
 
+CV[["entries_data"]] <- CV[["entries_data"]] |>
+  dplyr::filter(as.logical(in_cv))
+
 ```
 
 
@@ -105,6 +108,12 @@ Grant Neilson {#title}
 CV <- print_text_block(CV, "intro") 
 ```
 
+Industry Experience {data-icon=laptop}
+--------------------------------------------------------------------------------
+
+```{r}
+CV <- print_section(CV, 'industry_positions')
+```
 
 
 Education {data-icon=graduation-cap data-concise=true}
@@ -115,29 +124,12 @@ CV <- print_section(CV, 'education')
 ```
 
 
-
-Industry Experience {data-icon=laptop}
---------------------------------------------------------------------------------
-
-```{r}
-CV <- print_section(CV, 'industry_positions')
-```
-
-<!-- These breaks just force a new page so section doesnt get cut off -->
-<br>
-<br>
-<br>
-
-
-
-
-Selected Publications, Posters, and Talks {data-icon=book}
+Selected Publications {data-icon=book}
 --------------------------------------------------------------------------------
 
 ```{r}
 CV <- print_section(CV, 'academic_articles')
 ```
-
 
 
 ```{r}

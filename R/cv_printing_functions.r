@@ -262,11 +262,11 @@ style = \"background:linear-gradient(to right,
 #' @description Construct a bar chart of skills
 #' @param out_of The relative maximum for skills. Used to set what a fully filled in skill bar is.
 print_skills <- function(cv, type_of_interest) {
-  cv$skills %>%
-    dplyr::filter(type == type_of_interest) %>%
+  cv$skills |>
+    dplyr::filter(type == type_of_interest) |>
     glue::glue_data(
       "- <i class='{icon_type} fa-{icon} skills'></i> {skill}"
-    ) %>%
+    ) |>
     print()
 
   invisible(cv)
