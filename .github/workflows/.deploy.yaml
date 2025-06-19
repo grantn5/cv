@@ -14,17 +14,32 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: Set up R library path
+        run: echo "R_LIBS_USER=${{ runner.temp }}/Rlib" >> $GITHUB_ENV
+
+      - name: Cache R packages
+        uses: actions/cache@v3
+        with:
+          path: ${{ runner.temp }}/Rlib
+          key: r-${{ runner.os }}-${{ hashFiles('**/DESCRIPTION') }}-${{ steps.date.outputs.date }}
+          restore-keys: |
+            r-${{ runner.os }}-
+      - name: Get date for cache key
+        id: date
+        run: echo "date=$(date +'%Y-%m-%d-%H')" >> $GITHUB_OUTPUT
+
       - name: Install curl
-        run: |
-          sudo apt-get install libcurl4-openssl-dev
+        run: sudo apt-get install libcurl4-openssl-dev
 
       - uses: r-lib/actions/setup-r@v2
       - uses: r-lib/actions/setup-pandoc@v1
 
       - name: Install dependencies
         run: |
-          install.packages(c("rmarkdown", "pagedown", "googlesheets4", "purrr", "dplyr", "readr", "tidyr", "lubridate"))
+          install.packages(c("rmarkdown", "pagedown", "googlesheets4", "purrr", "dplyr", "readr", "tidyr", "lubridate", "here", "stringr"))
         shell: Rscript {0}
+        env:
+          R_LIBS_USER: ${{ runner.temp }}/Rlib
 
       - name: Create docs
         run: |
