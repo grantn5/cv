@@ -17,6 +17,9 @@ jobs:
       - name: Set up R library path
         run: echo "R_LIBS_USER=${{ runner.temp }}/Rlib" >> $GITHUB_ENV
 
+      - name: Create R library directory
+        run: mkdir -p ${{ runner.temp }}/Rlib
+
       - name: Cache R packages
         uses: actions/cache@v3
         with:
