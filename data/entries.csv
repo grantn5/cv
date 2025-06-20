@@ -1,7 +1,7 @@
 Where in your CV this entry belongs,Main title of the entry,Location the entry occured,Primary institution affiliation for entry,Start date of entry (year),"End year of entry. Set to ""current"" if entry is still ongoing.","Each description column is a separate bullet point for the entry. If you need more description bullet points simply add a new column with title ""description_{4,5,..}""",,,,,,,A filter variable that is used to decide if entry is in the smaller resume.,
 section,title,loc,institution,start,end,description_1,description_2,description_3,description_4,description_5,description_6,,in_resume,in_cv
 education,MSCi Biology,University of Southampton,"Southampton, UK",2015,2019,**Grade **: First Class Honors,Winner of the British Society for Immunology Graduate of the year award.,Recipient of the summer studentship from the Genetics Society (2017).,,,,,TRUE,TRUE
-education,Eduction,Merchiston Castle Shool,"Edinburgh, UK",2013,2015,"A Levels: Biology, Chemistry, Maths",,,,,,,TRUE,TRUE
+education,School,Merchiston Castle Shool,"Edinburgh, UK",2013,2015,"A Levels: Biology, Chemistry, Maths",,,,,,,TRUE,TRUE
 industry_positions,Senior Computational Biologist,[CoSyne Therapeutics](https://www.cosyne.com/),"London, UK",2023,2025,"Led WGS Analysis: Spearheaded the WGS analysis of 80 primary
 glioblastoma cell lines, and characterised these lines based on their SNV, SV and CNV profiles.","NF-Core Sarek Pipeline Expertise: Utilised the NF-Core Sarek pipeline; recognized as a named
 contributor in version 3.4.1. Optimised the running of the pipeline, achieving a 50% cost reduction
@@ -17,16 +17,13 @@ bioinformatics team.
 Python package.",TRUE,TRUE
 industry_positions,Computational Biologist ,[Fios Genomics](https://www.fiosgenomics.com/),"Edinburgh, UK",2020,2023,"Omics Data Analysis and Client Reporting: Directed projects focusing on high-dimensional
 omics data types (WES, WGS, scRNA-seq, proteomics), delivering comprehensive analyses and
-reports for clients such as Genentech, Zai Lab, and Syngenta.","Advanced Statistical Analysis Proficiency: Developed in-depth knowledge of statistical
+reports for clients.","Advanced Statistical Analysis Proficiency: Developed in-depth knowledge of statistical
 methodologies, mastering model selection and fitting techniques, including SVM, elastic net,
-random forest, and linear/logistic regression, while accounting for covariates.","Biomarker Discovery for Critical Health Indicators: Executed complex regression model
-analyses for biomarker discovery in bladder and lung diseases, contributing significantly to
-understanding these conditions.","Client Communication and Results Presentation: Led client calls, effectively communicating
-complex analytical results, ensuring clarity and client understanding.","Project Scoping and Strategy Advisory: Scoped projects and provided strategic advice to clients
-on leveraging public and private datasets, requiring extensive knowledge of statistical methods
-and quick, problem-solving capabilities.","Contribution to Internal R&D and R Package Development: Actively contributed to internal
+random forest, and linear/logistic regression, while accounting for covariates.","Conducted complex regression model
+analyses for biomarker discovery in bladder and lung cancer","Contribution to Internal R&D and R Package Development: Actively contributed to internal
 R&D by developing and maintaining specialized R packages, enhancing the team's analytical
-capabilities.",,TRUE,TRUE
+capabilities.","Client Communication and Results Presentation: Led client calls, effectively communicating
+complex analytical results, ensuring clarity and client understanding.",,,TRUE,TRUE
 industry_positions,Computational Biologist ,"[Complex Diseases Epigenetics group, Exeter Medical School](https://www.epigenomicslab.com/)","Exeter, UK",2019,2020,"Developed novel bioinformatics pipelines for Epigenome/Genome wide association studies, mQTL
 analysis and quality control of Illumina EPIC array data.","Took the lead on a project performing EWAS and GWAS analysis in ADHD patients, this involved
 fitting linear and logistic regression models while accounting for covariates.","Was invited to go on secondment to New York during the summer and work at the prestigious

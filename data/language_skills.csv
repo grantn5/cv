@@ -3,8 +3,8 @@ skill,type,icon_type,icon
 R,language,fab,r-project
 Python,language,fab,python
 Bash,language,fas,code
-nextflow,technology,fas,project-diagram
+Nextflow,language,fas,project-diagram
 Git/GitHub,technology,fab,github
-docker,technology,fab,docker
+Docker,technology,fab,docker
 aws,technology,fab,aws
-azure,technology,fab,microsoft
+Azure,technology,fab,microsoft

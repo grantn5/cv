@@ -48,17 +48,10 @@ Aside
 ================================================================================
 
 ```{r}
-# Build interactive network of positions colored by section
-# and connected if they occurred in the same year
-# datadrivencv::build_network_logo(CV$entries_data)
-```
-
-
-```{r}
 if(params$pdf_mode){
-  cat("View this CV online with links at _grantneilson.me/cv/_")
+  cat("View this CV online with links at https://grantn5.github.io/cv/")
 } else {
-  cat("[<i class='fas fa-download'></i> Download a PDF of this CV](https://github.com/grantneilson/cv/raw/master/grantneilson_cv.pdf)")
+  cat("[<i class='fas fa-download'></i> Download a PDF of this CV](https://github.com/grantn5/cv/blob/main/docs/cv.pdf)")
 }
 ```
 

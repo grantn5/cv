@@ -57,14 +57,14 @@ datadrivencv::build_network_logo(CV$entries_data)
 
 ```{r}
 if(params$pdf_mode){
-  cat("View this resume online with links at _nickstrayer.me/datadrivencv/resume_")
+  cat("View this resume online with links at https://grantn5.github.io/cv/")
 } else {
-  cat("[<i class='fas fa-download'></i> Download a PDF of this CV](https://github.com/nstrayer/cv/raw/master/strayer_resume.pdf)")
+  cat("[<i class='fas fa-download'></i> Download a PDF of this CV](https://github.com/grantn5/cv/blob/main/docs/cv.pdf)")
 }
 ```
 
 
-For a longer form version, see my [CV](nickstrayer.me/cv/).
+For a longer form version, see my [CV](https://grantn5.github.io/cv/).
 
 Contact {#contact}
 --------------------------------------------------------------------------------
@@ -96,7 +96,7 @@ Disclaimer {#disclaimer}
 
 Made with the R package [**pagedown**](https://github.com/rstudio/pagedown). 
 
-The source code is available at [https://github.com/grantneilson/cv](https://github.com/grantneilson/cv).
+The source code is available at [https://github.com/grantn5/cv](https://github.com/grantn5/cv).
 
 Last updated on `r Sys.Date()`.
 
