@@ -24,11 +24,16 @@ jobs:
         with:
           packages: pkgdown
 
+      - name: Set up GitHub PAT
+        run: echo "GITHUB_PAT=${{ secrets.GH_PAT }}" >> $GITHUB_ENV
+
       - name: Install dependencies
         run: |
           install.packages(c("rmarkdown", "pagedown", "pkgdown", "purrr", "dplyr", "readr", "tidyr", "lubridate", "here", "stringr", "devtools"))
           devtools::install_github("nstrayer/datadrivencv")
         shell: Rscript {0}
+        env:
+          GITHUB_PAT: ${{ secrets.GH_PAT }}
 
       - name: Create docs
         run: |
