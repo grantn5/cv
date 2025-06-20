@@ -20,11 +20,13 @@ jobs:
 
       - uses: r-lib/actions/setup-r@v2
       - uses: r-lib/actions/setup-pandoc@v1
+      - uses: r-lib/actions/setup-r-dependencies@v2
+        with:
+          packages: pkgdown
 
       - name: Install dependencies
         run: |
-          install.packages(c("ragg", "pkgdown"))
-          # install.packages(c("rmarkdown", "pagedown", "pkgdown", "purrr", "dplyr", "readr", "tidyr", "lubridate", "here", "stringr", "devtools"))
+          install.packages(c("rmarkdown", "pagedown", "pkgdown", "purrr", "dplyr", "readr", "tidyr", "lubridate", "here", "stringr", "devtools"))
           devtools::install_github("nstrayer/datadrivencv")
         shell: Rscript {0}
 
