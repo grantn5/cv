@@ -2,7 +2,7 @@ Where in your CV this entry belongs,Main title of the entry,Location the entry o
 section,title,loc,institution,start,end,description_1,description_2,description_3,description_4,description_5,description_6,,in_resume,in_cv
 education,MSCi Biology,University of Southampton,"Southampton, UK",2015,2019,**Grade **: First Class Honors,Winner of the British Society for Immunology Graduate of the year award.,Recipient of the summer studentship from the Genetics Society (2017).,,,,,TRUE,TRUE
 education,Eduction,Merchiston Castle Shool,"Edinburgh, UK",2013,2015,"A Levels: Biology, Chemistry, Maths",,,,,,,TRUE,TRUE
-industry_positions,Senior Computational Biologist,[CoSyne Therapeutics](https://www.cosyne.com/),"London, UK",2023,2025,"Led WGS Analysis for GBM Cell Lines: Spearheaded the WGS analysis of 80 primary
+industry_positions,Senior Computational Biologist,[CoSyne Therapeutics](https://www.cosyne.com/),"London, UK",2023,2025,"Led WGS Analysis: Spearheaded the WGS analysis of 80 primary
 glioblastoma cell lines, and characterised these lines based on their SNV, SV and CNV profiles.","NF-Core Sarek Pipeline Expertise: Utilised the NF-Core Sarek pipeline; recognized as a named
 contributor in version 3.4.1. Optimised the running of the pipeline, achieving a 50% cost reduction
 and 30% decrease in computational time per sample.","CNV Analysis: Conducted CNV calling on WGS data, this included writing an internal python
