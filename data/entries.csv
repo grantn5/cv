@@ -1,0 +1,39 @@
+Where in your CV this entry belongs,Main title of the entry,Location the entry occured,Primary institution affiliation for entry,Start date of entry (year),"End year of entry. Set to ""current"" if entry is still ongoing.","Each description column is a separate bullet point for the entry. If you need more description bullet points simply add a new column with title ""description_{4,5,..}""",,,,,,,A filter variable that is used to decide if entry is in the smaller resume.,
+section,title,loc,institution,start,end,description_1,description_2,description_3,description_4,description_5,description_6,,in_resume,in_cv
+education,MSCi Biology,University of Southampton,"Southampton, UK",2015,2019,**Grade **: First Class Honors,Winner of the British Society for Immunology Graduate of the year award.,Recipient of the summer studentship from the Genetics Society (2017).,,,,,TRUE,TRUE
+education,Eduction,Merchiston Castle Shool,"Edinburgh, UK",2013,2015,"A Levels: Biology, Chemistry, Maths",,,,,,,TRUE,TRUE
+industry_positions,Senior Computational Biologist,[CoSyne Therapeutics](https://www.cosyne.com/),"London, UK",2023,2025,"Led WGS Analysis: Spearheaded the WGS analysis of 80 primary
+glioblastoma cell lines, and characterised these lines based on their SNV, SV and CNV profiles.","NF-Core Sarek Pipeline Expertise: Utilised the NF-Core Sarek pipeline; recognized as a named
+contributor in version 3.4.1. Optimised the running of the pipeline, achieving a 50% cost reduction
+and 30% decrease in computational time per sample.","CNV Analysis: Conducted CNV calling on WGS data, this included writing an internal python
+package for custom analysis.","CRISPRi Pipeline Integration and Target Identification: Contributed to incorporating CNV calls
+into the CRISPRi drop-out analysis pipeline, and identified potential targets.","Single-Cell CNV Analysis and Sub-Clonal Identification: Executed single-cell CNV (sc-CNV)
+calling on proprietary perturb scRNA-seq data, identifying sub-clonal populations and
+contributing to the target identification platform.","Collaboration with AI Team on Single-Cell Dataset Processing: Aided the AI team in
+aggregating and processing over 25 million cells from publicly available single-cell datasets for
+the sc-foundation model.","Internal R&D: Responsible for developing and maintaining two internal R packages and one Establishment of Best Practices for Coding and Development: Played a key role in establishing
+best practices for code review, workflow efficiency, and package development within the
+bioinformatics team.
+Python package.",TRUE,TRUE
+industry_positions,Computational Biologist ,[Fios Genomics](https://www.fiosgenomics.com/),"Edinburgh, UK",2020,2023,"Omics Data Analysis and Client Reporting: Directed projects focusing on high-dimensional
+omics data types (WES, WGS, scRNA-seq, proteomics), delivering comprehensive analyses and
+reports for clients such as Genentech, Zai Lab, and Syngenta.","Advanced Statistical Analysis Proficiency: Developed in-depth knowledge of statistical
+methodologies, mastering model selection and fitting techniques, including SVM, elastic net,
+random forest, and linear/logistic regression, while accounting for covariates.","Biomarker Discovery for Critical Health Indicators: Executed complex regression model
+analyses for biomarker discovery in bladder and lung diseases, contributing significantly to
+understanding these conditions.","Client Communication and Results Presentation: Led client calls, effectively communicating
+complex analytical results, ensuring clarity and client understanding.","Project Scoping and Strategy Advisory: Scoped projects and provided strategic advice to clients
+on leveraging public and private datasets, requiring extensive knowledge of statistical methods
+and quick, problem-solving capabilities.","Contribution to Internal R&D and R Package Development: Actively contributed to internal
+R&D by developing and maintaining specialized R packages, enhancing the team's analytical
+capabilities.",,TRUE,TRUE
+industry_positions,Computational Biologist ,"[Complex Diseases Epigenetics group, Exeter Medical School](https://www.epigenomicslab.com/)","Exeter, UK",2019,2020,"Developed novel bioinformatics pipelines for Epigenome/Genome wide association studies, mQTL
+analysis and quality control of Illumina EPIC array data.","Took the lead on a project performing EWAS and GWAS analysis in ADHD patients, this involved
+fitting linear and logistic regression models while accounting for covariates.","Was invited to go on secondment to New York during the summer and work at the prestigious
+Mount Sinai medical school as a visiting bioinformatician. This was unfortunately cancelled due to
+COVID-19.",,,,,TRUE,TRUE
+academic_articles,Multi modal single cell foundation models via dynamic token adaptation,BioRxiv,,,2025,"Wenmin Zhao, AnaSolaguren-Beascoa, **Grant Neilson**, Regina Reynolds, Louwai Muhammed, Liisi Laaniste, Sera Aylin Cakiroglu",Role: Data Preproccessing,doi: https://doi.org/10.1101/2025.04.17.649387,,,,,TRUE,TRUE
+academic_articles,Detecting cell level transcriptomic changes of Perturb seq using Contrastive Fine tuning of Single Cell Foundation Models,BioRxiv,,,2025,"Wenmin Zhao, AnaSolaguren-Beascoa, **Grant Neilson**, Regina Reynolds, Louwai Muhammed, Liisi Laaniste, Sera Aylin Cakiroglu",Role: Data Preproccessing,doi: https://doi.org/10.1101/2025.04.17.649395,,,,,TRUE,TRUE
+academic_articles,Recalibrating the epigenetic clock: implications for assessing biological age in the human cortex,Brain,,,2020,"Gemma L Shireby, Jonathan P Davies, Paul T Francis, Joe Burrage, Emma M Walker, Grant W A Neilson, Aisha Dahir, Alan J Thomas, Seth Love, Rebecca G Smith, Katie Lunnon, Meena Kumari, Leonard C Schalkwyk, Kevin Morgan, Keeley Brookes, Eilis Hannon, Jonathan Mill",Role: Data Analysis and Alignment,,,,,,FALSE,TRUE
+academic_articles,Social mobility across the lifecourse and DNA methylation age acceleration in adults in the UK,Sceintifc Reports,,,2022,"Yanchun Bao, Tyler Gorrie-Stone, Eilis Hannon, Amanda Hughes, Alexandria Andrayas, Grant Neilson, Joe Burrage, Jonathon Mill, Leonard Schalkwyk & Meena Kumari",,,,,,,FALSE,FALSE
+academic_articles,Novel epigenetic clock for fetal brain development predicts prenatal age for cellular stem cell models and derived neurons,Molecular Brain,,,2021,"Leonard C. Steg, Gemma L. Shireby, Jennifer Imm, Jonathan P. Davies, Alice Franklin, Robert Flynn, Seema C. Namboori, Akshay Bhinge, Aaron R. Jeffries, Joe Burrage, Grant W. A. Neilson, Emma M. Walker, Leo W. Perfect, Jack Price, Grainne McAlonan, Deepak P. Srivastava, Nicholas J. Bray, Emma L. Cope, Kimberley M. Jones, Nicholas D. Allen, Ehsan Pishva, Emma L. Dempster, Katie Lunnon, Jonathan Mill & Eilis Hannon",,,,,,,FALSE,TRUE
