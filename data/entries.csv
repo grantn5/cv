@@ -2,24 +2,24 @@ Where in your CV this entry belongs,Main title of the entry,Location the entry o
 section,title,loc,institution,start,end,description_1,description_2,description_3,description_4,description_5,description_6,description_7,in_resume,in_cv
 education,MSCi Biology,University of Southampton,"Southampton, UK",2015,2019,**Grade **: First Class Honors,Winner of the British Society for Immunology Graduate of the year award.,Recipient of the summer studentship from the Genetics Society (2017).,,,,,TRUE,TRUE
 education,School,Merchiston Castle Shool,"Edinburgh, UK",2013,2015,"A Levels: Biology, Chemistry, Maths",,,,,,,TRUE,TRUE
-industry_positions,Senior Computational Biologist,[CoSyne Therapeutics](https://www.cosyne.com/),"London, UK",2023,2025,"Led WGS Analysis: Spearheaded the WGS analysis of 80 primary
-glioblastoma cell lines, and characterised these lines based on their SNV, SV and CNV profiles.","NF-Core Sarek Pipeline Expertise: Utilised the NF-Core Sarek pipeline; recognized as a named
+industry_positions,Senior Computational Biologist,[CoSyne Therapeutics](https://www.cosyne.com/),"London, UK",2023,2025,"Led the WGS analysis of 80 primary
+glioblastoma cell lines, and characterised these lines based on their SNV, SV and CNV profiles.","WGS Analysis: Utilised the NF-Core Sarek pipeline; recognized as a named
 contributor in version 3.4.1. Optimised the running of the pipeline, achieving a 50% cost reduction
-and 30% decrease in computational time per sample.","CNV Analysis: Conducted CNV calling on WGS data, this included writing an internal python
+and 30% decrease in computational time per sample.","Conducted CNV calling on WGS data, this included writing an internal python
 package for custom analysis.","CRISPRi Pipeline Integration and Target Identification: Contributed to incorporating CNV calls
-into the CRISPRi drop-out analysis pipeline, to identify potential target biomarker pairs","Single-Cell CNV Analysis and Sub-Clonal Identification: Executed single-cell CNV (sc-CNV)
+into the CRISPRi drop-out analysis pipeline, to identify potential target biomarker pairs.","Executed single-cell CNV (sc-CNV)
 calling on proprietary perturb scRNA-seq data, identifying sub-clonal populations and
-contributing to the target identification platform.","Collaboration with AI Team on Single-Cell Dataset Processing: Aided the AI team in
+contributing to the target identification platform.","Collaborated with  the AI team in
 aggregating and processing over 25 million cells from publicly available single-cell datasets for
-the sc-foundation model.",Internal R&D: Responsible for developing an internal container system using Docker and ECR (later handed over to engineering). Author and Lead developer on internal R and Python packages with responsibilities for maintenance. Established best practices for code development and review. Aided in the development of a project templating system using cruft.,TRUE,TRUE
-industry_positions,Computational Biologist ,[Fios Genomics](https://www.fiosgenomics.com/),"Edinburgh, UK",2020,2023,"Omics Data Analysis and Client Reporting: Directed projects focusing on high-dimensional
+the sc-foundation model, led to co-authorship in 2 publications.",Internal R&D: Responsible for developing an internal container system using Docker and ECR (later handed over to engineering). Author and Lead developer on internal R and Python packages with responsibilities for maintenance. Established best practices for code development and review. Aided in the development of a project templating system using cruft.,TRUE,TRUE
+industry_positions,Computational Biologist ,[Fios Genomics](https://www.fiosgenomics.com/),"Edinburgh, UK",2020,2023,"Directed projects focusing on high-dimensional
 omics data types (WES, WGS, scRNA-seq, proteomics), delivering comprehensive analyses and
-reports for clients.","Advanced Statistical Analysis Proficiency: Developed in-depth knowledge of statistical
+reports for clients.","Developed in-depth knowledge of statistical
 methodologies, mastering model selection and fitting techniques, including SVM, elastic net,
 random forest, and linear/logistic regression, while accounting for covariates.","Conducted complex regression model
-analyses for biomarker discovery in bladder and lung cancer","Contribution to Internal R&D and R Package Development: Actively contributed to internal
+analyses for biomarker discovery in bladder and lung cancer.","Actively contributed to internal
 R&D by developing and maintaining specialized R packages, enhancing the team's analytical
-capabilities.","Client Communication and Results Presentation: Led client calls, effectively communicating
+capabilities.","Led client calls, effectively communicating
 complex analytical results, ensuring clarity and client understanding.",,,TRUE,TRUE
 industry_positions,Computational Biologist ,"[Complex Diseases Epigenetics group, Exeter Medical School](https://www.epigenomicslab.com/)","Exeter, UK",2019,2020,"Developed novel bioinformatics pipelines for Epigenome/Genome wide association studies, mQTL
 analysis and quality control of Illumina EPIC array data.","Took the lead on a project performing EWAS and GWAS analysis in ADHD patients, this involved

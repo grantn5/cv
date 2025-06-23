@@ -1,9 +1,9 @@
 ﻿Id used for finding text block,Contents of text block. Supports markdown formatting.
 loc,text
-intro,"Bioinformatician with four years of industry experience analyzing NGS datatypes with a specialism in WGS.
+intro,"Bioinformatician with six years of industry experience analyzing NGS datatypes with a specialism in WGS.
 An expert in programming with R and Python, have extensively used both languages for analysis of high
 dimensional omics data as well as developing packages for both languages. A named contributor on the NF-
 Core Sarek pipeline. Experience working with AWS services such as EC2, S3 and ECR. Have extensively used
-version control software i.e., Gitlab and Docker to containerize analysis. An articulate and reliable
+version control software (GitHub/Lab) and Docker to containerize analysis. An articulate and reliable
 individual with strong communication skills. This is demonstrated by my achievements and
 accomplishments to date."
