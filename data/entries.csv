@@ -1,5 +1,5 @@
 Where in your CV this entry belongs,Main title of the entry,Location the entry occured,Primary institution affiliation for entry,Start date of entry (year),"End year of entry. Set to ""current"" if entry is still ongoing.","Each description column is a separate bullet point for the entry. If you need more description bullet points simply add a new column with title ""description_{4,5,..}""",,,,,,,A filter variable that is used to decide if entry is in the smaller resume.,
-section,title,loc,institution,start,end,description_1,description_2,description_3,description_4,description_5,description_6,,in_resume,in_cv
+section,title,loc,institution,start,end,description_1,description_2,description_3,description_4,description_5,description_6,description_7,in_resume,in_cv
 education,MSCi Biology,University of Southampton,"Southampton, UK",2015,2019,**Grade **: First Class Honors,Winner of the British Society for Immunology Graduate of the year award.,Recipient of the summer studentship from the Genetics Society (2017).,,,,,TRUE,TRUE
 education,School,Merchiston Castle Shool,"Edinburgh, UK",2013,2015,"A Levels: Biology, Chemistry, Maths",,,,,,,TRUE,TRUE
 industry_positions,Senior Computational Biologist,[CoSyne Therapeutics](https://www.cosyne.com/),"London, UK",2023,2025,"Led WGS Analysis: Spearheaded the WGS analysis of 80 primary
@@ -7,14 +7,11 @@ glioblastoma cell lines, and characterised these lines based on their SNV, SV an
 contributor in version 3.4.1. Optimised the running of the pipeline, achieving a 50% cost reduction
 and 30% decrease in computational time per sample.","CNV Analysis: Conducted CNV calling on WGS data, this included writing an internal python
 package for custom analysis.","CRISPRi Pipeline Integration and Target Identification: Contributed to incorporating CNV calls
-into the CRISPRi drop-out analysis pipeline, and identified potential targets.","Single-Cell CNV Analysis and Sub-Clonal Identification: Executed single-cell CNV (sc-CNV)
+into the CRISPRi drop-out analysis pipeline, to identify potential target biomarker pairs","Single-Cell CNV Analysis and Sub-Clonal Identification: Executed single-cell CNV (sc-CNV)
 calling on proprietary perturb scRNA-seq data, identifying sub-clonal populations and
 contributing to the target identification platform.","Collaboration with AI Team on Single-Cell Dataset Processing: Aided the AI team in
 aggregating and processing over 25 million cells from publicly available single-cell datasets for
-the sc-foundation model.","Internal R&D: Responsible for developing and maintaining two internal R packages and one Establishment of Best Practices for Coding and Development: Played a key role in establishing
-best practices for code review, workflow efficiency, and package development within the
-bioinformatics team.
-Python package.",TRUE,TRUE
+the sc-foundation model.",Internal R&D: Responsible for developing an internal container system using Docker and ECR (later handed over to engineering). Author and Lead developer on internal R and Python packages with responsibilities for maintenance. Established best practices for code development and review. Aided in the development of a project templating system using cruft.,TRUE,TRUE
 industry_positions,Computational Biologist ,[Fios Genomics](https://www.fiosgenomics.com/),"Edinburgh, UK",2020,2023,"Omics Data Analysis and Client Reporting: Directed projects focusing on high-dimensional
 omics data types (WES, WGS, scRNA-seq, proteomics), delivering comprehensive analyses and
 reports for clients.","Advanced Statistical Analysis Proficiency: Developed in-depth knowledge of statistical
