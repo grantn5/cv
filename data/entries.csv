@@ -3,7 +3,7 @@ section,title,loc,institution,start,end,description_1,description_2,description_
 education,MSCi Biology,University of Southampton,"Southampton, UK",2015,2019,**Grade **: First Class Honors,Winner of the British Society for Immunology Graduate of the year award.,Recipient of the summer studentship from the Genetics Society (2017).,,,TRUE,TRUE
 education,School,Merchiston Castle Shool,"Edinburgh, UK",2013,2015,"A Levels: Biology, Chemistry, Maths",,,,,TRUE,TRUE
 industry_positions,Senior Computational Biologist,[CoSyne Therapeutics](https://www.cosyne.com/),"London, UK",2023,2025,"Led the end-to-end WGS analysis of 80 primary glioblastoma cell lines, from raw data alignment and QC to comprehensive genetic characterisation (SNVs, SVs, CNVs). 
-Integrated these genomic profiles with CRISPRi screen data, applying advanced statistical models to identify novel genetic dependencies and potential biomarker–target pairs.","Utilised the NF-Core Sarek pipeline; recognized as a named
+Integrated these genomic profiles with CRISPRi screen data, applying advanced statistical models to identify novel genetic dependencies and potential biomarker-target pairs.","Utilised the NF-Core Sarek pipeline; recognized as a named
 contributor in version 3.4.1. Optimised the running of the pipeline, achieving a 50% cost reduction
 and 30% decrease in computational time per sample.","Executed single-cell CNV (sc-CNV)
 calling on proprietary perturb scRNA-seq data, identifying sub-clonal populations and
