@@ -9,7 +9,7 @@
 rmarkdown::render(
   here::here("cv.rmd"),
   params = list(pdf_mode = FALSE),
-  output_file = here::here("docs/cv.html")
+  output_file = here::here("docs/index.html")
 )
 
 # Knit the PDF version to temporary html location
