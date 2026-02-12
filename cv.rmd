@@ -77,7 +77,12 @@ Technologies {#technologies}
 CV |> print_skills("technology")
 ```
 
+Open Source & Public Projects{#projects} 
+--------------------------------------------------------------------------------
 
+```{r} 
+CV |> print_skills("projects")
+```
 
 Disclaimer {#disclaimer}
 --------------------------------------------------------------------------------
