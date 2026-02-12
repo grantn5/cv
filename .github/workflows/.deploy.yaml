@@ -30,7 +30,6 @@ jobs:
       - name: Install dependencies
         run: |
           install.packages(c("rmarkdown", "pagedown", "pkgdown", "purrr", "dplyr", "readr", "tidyr", "lubridate", "here", "stringr", "devtools"))
-          devtools::install_github("nstrayer/datadrivencv")
         shell: Rscript {0}
         env:
           GITHUB_PAT: ${{ secrets.GH_PAT }}
