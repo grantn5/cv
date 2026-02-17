@@ -1,11 +1,3 @@
----
-title: "Grant Neilson - CV"
-output:
-  html_document:
-    self_contained: true
----
-
-```{css, echo=FALSE}
 * {
     margin: 0;
     padding: 0;
@@ -89,23 +81,3 @@ h1 {
         font-size: 2rem;
     }
 }
-```
-
-<div class="container">
-  <h1>Grant Neilson</h1>
-  <p class="subtitle">Computational Biologist & Bioinformatics Engineer</p>
-  
-  <div class="cv-options">
-    <a href="cv.html" class="cv-card">
-      <div class="icon">🧬</div>
-      <h2>Bioinformatics CV</h2>
-      <p>Full bioinformatics and computational biology experience, focusing on genomics analysis, biomarker discovery, and scientific research.</p>
-    </a>
-    
-    <a href="cv_engineer.html" class="cv-card">
-      <div class="icon">⚙️</div>
-      <h2>Engineering-Focused CV</h2>
-      <p>Software engineering and infrastructure experience, emphasizing cloud architecture, DevOps, pipeline development, and software best practices.</p>
-    </a>
-  </div>
-</div>
