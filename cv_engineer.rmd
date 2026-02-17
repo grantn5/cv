@@ -26,7 +26,7 @@ CV <- create_CV_object(
 )
 
 CV[["entries_data"]] <- CV[["entries_data"]] |>
-  dplyr::filter(as.logical(in_cv))
+  dplyr::filter(as.logical(in_engineer_cv))
 
 ```
 
@@ -49,9 +49,9 @@ Aside
 
 ```{r}
 if(params$pdf_mode){
-  cat("View this CV online with links at https://grantn5.github.io/cv/cv.html")
+  cat("View this CV online with links at https://grantn5.github.io/cv/cv_engineer.html")
 } else {
-  cat("[<i class='fas fa-download'></i> Download a PDF of this CV](https://github.com/grantn5/cv/raw/gh-pages/cv.pdf)")
+  cat("[<i class='fas fa-download'></i> Download a PDF of this CV](https://github.com/grantn5/cv/raw/gh-pages/cv_engineer.pdf)")
 }
 ```
 
@@ -103,7 +103,7 @@ Grant Neilson {#title}
 
 ```{r}
 # Note the assignment back to CV. This is so the link stripping works properly in PDF mode
-CV <- print_text_block(CV, "intro") 
+CV <- print_text_block(CV, "intro_engineer") 
 ```
 
 Industry Experience {data-icon=laptop}
