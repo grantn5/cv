@@ -91,7 +91,7 @@ Made with the R package [**pagedown**](https://github.com/rstudio/pagedown).
 
 The source code is available on [GitHub](https://github.com/grantn5/cv).
 
-Last updated on `r Sys.Date()`.
+Last updated `r format(Sys.Date(), "%B %Y")`.
 
 
 
