@@ -8,6 +8,7 @@ GitLab/GitHub,technology,fab,github
 Docker,technology,fab,docker
 aws,technology,fab,aws
 Azure,technology,fab,microsoft
-[Sarek](https://github.com/nf-core/sarek),projects,fab,github nf-core
-[bixverse](https://github.com/GregorLueg/bixverse),projects,fab,github
-[mainfoldsR](https://github.com/GregorLueg/manifoldsR),projects,fab,github
+[bixverse](https://github.com/GregorLueg/bixverse),projects,fab,r-project
+[mainfoldsR](https://github.com/GregorLueg/manifoldsR),projects,fab,r-project
+[cosyne-cnvutils](https://github.com/cosyne-therapeutics/cosyne-cnvutils),projects,fab,python
+[Sarek](https://github.com/nf-core/sarek),projects,fas,project-diagram

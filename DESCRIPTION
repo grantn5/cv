@@ -1,0 +1,20 @@
+Package: cv
+Title: CV Rendering Project
+Version: 0.0.1
+Description: R Markdown CV rendering project.
+Authors@R: person("Grant", "Neilson", role = c("aut", "cre"))
+License: CC0
+Encoding: UTF-8
+Imports:
+    dplyr,
+    fs,
+    glue,
+    here,
+    knitr,
+    lubridate,
+    pagedown,
+    purrr,
+    readr,
+    rmarkdown,
+    stringr,
+    tidyr
