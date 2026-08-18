@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <meta name="author" content="Grant Neilson" />
-    <meta name="date" content="2026-07-06" />
+    <meta name="date" content="2026-08-18" />
     <title>Grant Neilson’s CV</title>
 
     
@@ -32665,6 +32665,8 @@ content: none;
 <li><i class="fab fa-docker skills"></i> Docker</li>
 <li><i class="fab fa-aws skills"></i> AWS</li>
 <li><i class="fab fa-microsoft skills"></i> Azure</li>
+<li><i class="fas fa-database skills"></i> DuckDB</li>
+<li><i class="fas fa-robot skills"></i> MCP/LLM Agents</li>
 </ul>
 </div>
 <div id="projects" class="section level2">
@@ -32680,7 +32682,7 @@ content: none;
 <h2>Disclaimer</h2>
 <p>Made with the R package <a href="https://github.com/rstudio/pagedown"><strong>pagedown</strong></a>.</p>
 <p>The source code is available on <a href="https://github.com/grantn5/cv">GitHub</a>.</p>
-<p>Last updated July 2026.</p>
+<p>Last updated August 2026.</p>
 </div>
 </div>
 <div id="main" class="section level1">
@@ -32703,6 +32705,8 @@ content: none;
 <li>Recognized as a named
 contributor in version 3.4.1 of the NF-core Sarek pipeline. Optimised the running of the pipeline, achieving a 50% cost reduction
 and 30% decrease in computational time per sample.</li>
+<li>Co-developed an internal MCP server exposing CoSyne’s omics lakehouse and public biomedical APIs to LLM agents. Authored the DuckLake SQL catalog and query layer: a curated, allowlisted table catalog encoding row grain, join keys and data caveats, with server-side SELECT-only validation and row caps forming the safety boundary for model-generated SQL. Connected to Claude, enabling agents to reason across internal and public data and generate testable hypotheses.</li>
+<li>Led ingestion for the company DuckLake lakehouse, a Postgres catalog over Parquet on S3 queried with DuckDB, landing 70+ schema-validated tables spanning internal RNA-seq, WGS, methylation, CRISPR and dose-response data alongside OpenTargets, DepMap, CCLE/PRISM and Orphanet. Built a polars and pandera validation layer enforcing a declared schema on every write, shipped via Docker/ECR images and GitLab and GitHub CI.</li>
 </ul>
 </div>
 <div id="computational-biologist" class="section level3">
