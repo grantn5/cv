@@ -13,3 +13,5 @@ Azure,technology,fab,microsoft
 [manifoldsR](https://github.com/GregorLueg/manifoldsR),projects,fab,r-project
 [cosyne-cnvutils](https://github.com/cosyne-therapeutics/cosyne-cnvutils),projects,fab,python
 [Sarek](https://github.com/nf-core/sarek),projects,fas,project-diagram
+DuckDB,technology,fas,database
+MCP/LLM Agents,technology,fas,robot
