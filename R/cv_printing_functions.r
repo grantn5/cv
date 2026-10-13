@@ -4,19 +4,23 @@
 #' Create a CV_Printer object.
 #'
 #' @param data_location Path of the spreadsheets holding all your data. This can be
-#'   either a URL to a google sheet with multiple sheets containing the four
-#'   data types or a path to a folder containing four `.csv`s with the neccesary
+#'   either a URL to a google sheet with multiple sheets containing the five
+#'   data types or a path to a folder containing five `.csv`s with the neccesary
 #'   data.
-#' @param source_location Where is the code to build your CV hosted?
 #' @param pdf_mode Is the output being rendered into a pdf? Aka do links need
 #'   to be stripped?
 #' @param sheet_is_publicly_readable If you're using google sheets for data,
 #'   is the sheet publicly available? (Makes authorization easier.)
 #' @return A new `CV_Printer` object.
+#' @examples
+#' \dontrun{
+#' cv <- create_CV_object(
+#'   data_location = paste0(here::here("data"), "/")
+#' )
+#' }
 create_CV_object <- function(
   data_location,
   pdf_mode = FALSE,
-  resume_mode = FALSE,
   sheet_is_publicly_readable = TRUE
 ) {
   cv <- list(
@@ -50,6 +54,7 @@ create_CV_object <- function(
       )
     }
     cv$entries_data <- read_gsheet(sheet_id = "entries")
+    cv$bullets <- read_gsheet(sheet_id = "bullets")
     cv$skills <- read_gsheet(sheet_id = "language_skills")
     cv$text_blocks <- read_gsheet(sheet_id = "text_blocks")
     cv$contact_info <- read_gsheet(sheet_id = "contact_info")
@@ -57,6 +62,10 @@ create_CV_object <- function(
     # Want to go old-school with csvs?
     cv$entries_data <- readr::read_csv(
       paste0(data_location, "entries.csv"),
+      skip = 1
+    )
+    cv$bullets <- readr::read_csv(
+      paste0(data_location, "bullets.csv"),
       skip = 1
     )
     cv$skills <- readr::read_csv(
@@ -92,32 +101,22 @@ create_CV_object <- function(
       lubridate::dmy()
   }
 
-  cv$entries_data <- cv$entries_data |>
-    dplyr::filter(
-      !resume_mode | in_resume == "TRUE"
+  # Keep only the included bullets and collapse them into one markdown list per
+  # entry
+  bullets <- cv$bullets |>
+    dplyr::filter(as.logical(include) %in% TRUE) |>
+    dplyr::arrange(entry_id, as.numeric(order)) |>
+    dplyr::summarise(
+      description_bullets = paste0("- ", text, collapse = "\n"),
+      .by = entry_id
     )
 
-  # Check if the column "description_md" exists in the entries_data dataframe
-  if ("description_md" %in% colnames(cv$entries_data)) {
-    cv$entries_data <- cv$entries_data |>
-      dplyr::rename(description_bullets = description_md)
-  } else {
-    # Assume we're using old bullet_1, bullet_2, etc. columns
-    cv$entries_data <- cv$entries_data |>
-      tidyr::unite(
-        tidyr::starts_with("description"),
-        col = "description_bullets",
-        sep = "\n- ",
-        na.rm = TRUE
-      ) |>
-      dplyr::mutate(
-        description_bullets = ifelse(
-          description_bullets != "",
-          paste0("- ", description_bullets),
-          ""
-        )
-      )
-  }
+  cv$entries_data <- cv$entries_data |>
+    dplyr::filter(as.logical(include) %in% TRUE) |>
+    dplyr::left_join(bullets, by = "entry_id") |>
+    dplyr::mutate(
+      description_bullets = dplyr::coalesce(description_bullets, "")
+    )
 
   # Clean up entries dataframe to format we need it for printing
   cv$entries_data <- cv$entries_data |>
@@ -219,9 +218,20 @@ print_section <- function(cv, section_id, glue_template = "default") {
 }
 
 
-#' @description Prints out text block identified by a given label.
-#' @param label ID of the text block to print as encoded in `label` column of `text_blocks` table.
+#' Print a text block
+#'
+#' @param cv CV object from `create_CV_object()`.
+#' @param label ID of the text block to print, as encoded in the `loc` column
+#'   of the `text_blocks` table. Must exist in the table.
+#' @return The CV object, invisibly, with any stripped links recorded.
+#' @examples
+#' \dontrun{
+#' cv <- print_text_block(cv, "intro_cv")
+#' }
 print_text_block <- function(cv, label) {
+  checkmate::qassert(label, "S1")
+  checkmate::assert_choice(label, cv$text_blocks$loc)
+
   text_block <- dplyr::filter(cv$text_blocks, loc == label) |>
     dplyr::pull(text)
 
