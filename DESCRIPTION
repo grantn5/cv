@@ -6,6 +6,7 @@ Authors@R: person("Grant", "Neilson", role = c("aut", "cre"))
 License: CC0
 Encoding: UTF-8
 Imports:
+    checkmate,
     dplyr,
     fs,
     glue,
@@ -16,5 +17,4 @@ Imports:
     purrr,
     readr,
     rmarkdown,
-    stringr,
-    tidyr
+    stringr
